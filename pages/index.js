@@ -15,11 +15,12 @@ export default function HomePage({ news }) {
         {news.map((item) => (
           <NewsItem key={item.id} news={item} variant="outline" />
         ))}
-        {news.length > 0 && (
+        {news.length > 5 && (
           <Link href="/news">
             <a className="btn-secondary">View More News</a>
           </Link>
         )}
+        <Button>Here</Button>
       </Layout>
     </div>
   );

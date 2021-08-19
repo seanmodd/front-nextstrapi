@@ -26,7 +26,7 @@ export const theme = extendTheme({
         border:
           props.colorMode === 'dark'
             ? '0.1px solid #88888886'
-            : '0px solid blue',
+            : '0.1px solid #88888886',
         transition: 'all 1.0s ease-in-out',
         borderRadius: '5px',
         _hover: {
@@ -57,9 +57,11 @@ export const theme = extendTheme({
         m: '5',
         bg: 'gray.700',
         color: 'blue.50',
+        bg: props.colorMode === 'dark' ? 'blue.300' : 'red.50',
+        color: props.colorMode === 'dark' ? 'gray.50' : 'gray.800',
         fontWeight: 'semibold',
         textShadow: '-1px 1px 15px #ff00007e',
-        borderWidth: '5px',
+        borderWidth: '1px',
         borderRadius: '15px',
         borderColor: 'gray.700',
         _hover: {
@@ -67,9 +69,8 @@ export const theme = extendTheme({
           bg: 'gray.50',
           color: '#0022e4',
           textShadow: '0 3px 0 #a0a0a07e',
-          borderWidth: '5px',
           borderRadius: '15px',
-          borderColor: '#0022e4',
+          // borderColor: '#0022e4',
         },
         transition: 'all 0.5s ease-in-out',
       },
@@ -85,15 +86,13 @@ export const theme = extendTheme({
       },
     },
     Button: {
-      _hover: {
-        borderColor: '#ff0000',
+      baseStyle: {
+        fontWeight: 'normal',
+        borderColor: '#313131',
         bg: 'gray.50',
         textShadow: '0 3px 0 #a0a0a07e',
-        borderWidth: '5px',
+        borderWidth: '2px',
         borderRadius: '15px',
-      },
-      baseStyle: {
-        fontWeight: 'bold',
       },
       sizes: {
         xl: {
@@ -124,17 +123,15 @@ export const theme = extendTheme({
       },
       variants: {
         'with-shadow': {
-          bg: 'red.400',
-          boxShadow: '0 0 2px 2px #efdfde',
+          // bg: 'red.400',
+          // boxShadow: '0 0 2px 2px #efdfde',
         },
         solid: (props) => ({
           bg: props.colorMode === 'dark' ? 'blue.300' : 'red.50',
           color: props.colorMode === 'dark' ? 'gray.50' : 'gray.800',
           _hover: {
-            borderColor: '#ff0000',
             bg: 'gray.50',
             textShadow: '0 3px 0 #a0a0a07e',
-            borderWidth: '5px',
             borderRadius: '15px',
           },
         }),
