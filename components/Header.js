@@ -1,6 +1,13 @@
 import Link from 'next/link';
 import { useContext } from 'react';
-import { HStack, Flex, VStack, Button } from '@chakra-ui/react';
+import {
+  HStack,
+  Flex,
+  VStack,
+  Button,
+  Image,
+  useColorMode,
+} from '@chakra-ui/react';
 import styles from '@/styles/Header.module.css';
 import Search from './Search';
 import AuthContext from '@/context/AuthContext';
@@ -9,6 +16,7 @@ import '@fontsource/questrial';
 import '@fontsource/inter';
 
 export default function Header() {
+  const { colorMode, toggleColorMode } = useColorMode();
   const { user, signout } = useContext(AuthContext);
   return (
     // <header className={styles.header}>
@@ -20,19 +28,22 @@ export default function Header() {
       // bg="pink"
     >
       <div className={styles.logo}>
-        <HStack minWidth="300px" align="center" justify="center">
+        <VStack
+          fontFamily="inter"
+          minWidth="300px"
+          align="center"
+          justify="center"
+        >
+          <h1 style={{ fontFamily: 'questrial' }}>Sports</h1>
           <Link href="/">
-            <a
-              style={{
-                fontFamily: 'questrial',
-                fontWeight: '600',
-                textDecoration: 'underline',
-              }}
-            >
-              Sport News
-            </a>
+            {colorMode === 'dark' ? (
+              <Image cursor="pointer" py="0" src="/face.png" />
+            ) : (
+              <Image cursor="pointer" py="0" src="/face-3.png" />
+            )}
           </Link>
-        </HStack>
+          <h1 style={{ fontFamily: 'questrial' }}>News.</h1>
+        </VStack>
       </div>
       <HStack minWidth="300px" justifyContent="center" alignItems="center">
         <Search />
