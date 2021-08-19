@@ -11,13 +11,13 @@ export default function HomePage({ news }) {
     <div>
       <Layout>
         <Button>Home</Button>
-        <Heading>This is a header!</Heading>
-        <h1>This is a header!</h1>
-        <Text color="brand.100">This is my text</Text>
+        <Heading>This is a Heading</Heading>
+        <h1>This is a h1</h1>
+        <Text color="brand.100">This is a Text</Text>
         <p>this is p</p>
-        <Input placeholder="Name" type="text" variant="outline" />
+        <Input placeholder="This is a Input" type="text" variant="outline" />
         <a href="http://www.google.com">here is a link</a>
-        <h1>Latest News</h1>
+        <h1>Latest News (h1)</h1>
         {news.length === 0 && <h3>No News</h3>}
         {news.map((item) => (
           <NewsItem key={item.id} news={item} variant="outline" />
