@@ -1,15 +1,15 @@
-import { FaUser } from "react-icons/fa";
-import { useState, useEffect, useContext } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Link from "next/link";
-import Layout from "@/components/Layout";
-import styles from "@/styles/AuthForm.module.css";
-import AuthContext from "@/context/AuthContext";
+import { FaUser } from 'react-icons/fa';
+import { useState, useEffect, useContext } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Link from 'next/link';
+import Layout from '@/components/Layout';
+import styles from '@/styles/AuthForm.module.css';
+import AuthContext from '@/context/AuthContext';
 
 export default function SignInPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const { signin, error } = useContext(AuthContext);
 
   useEffect(() => error && toast.error(error));
@@ -47,6 +47,7 @@ export default function SignInPage() {
             />
           </div>
           <input type="submit" value="Sign In" className="btn" />
+          <button type="submit"> Sign In </button>
         </form>
         <p>
           Don't have an account ? <Link href="/auth/signup">Sign Up</Link>
