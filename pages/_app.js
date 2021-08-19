@@ -3,8 +3,6 @@ import '../styles/globals.css';
 import { AuthProvider } from '@/context/AuthContext';
 import ScrollToTop from '@/components/ScrollToTop';
 import { theme } from '../styles/styles';
-import { mycustomtheme } from '../styles/colors';
-import thetheme from '../styles/styles-copy';
 import DarkModeSwitch from '@/components/DarkModeSwitch';
 
 function MyApp({ Component, pageProps }) {

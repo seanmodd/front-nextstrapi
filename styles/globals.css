@@ -30,6 +30,20 @@ button {
   margin-right: 10px;
 }
 
+input {
+  minWidth: 200px;
+  maxWidth: 400px;
+  /* box-shadow: 2.5px 2px #888888; */
+  /* box-shadow: 0 0 2px 4px #dee4ef; */
+  /* box-shadow: 0 0 2px 0.5px #a5a5a5; */
+}
+
+
+
+input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  opacity: 1; /* Firefox */
+}
+
 .btn {
   display: inline-block;
   background: coral;
@@ -64,7 +78,7 @@ button {
   opacity: 0.9;
 }
 
-.btn-secondary {
+/* .btn-secondary {
   font: inherit;
   font-size: 13px;
   background: darkslategrey;
@@ -74,7 +88,7 @@ button {
   padding: 5px 15px;
   margin: 0 20px;
   cursor: pointer;
-}
+} */
 
 .btn-secondary:hover {
   opacity: 0.8;

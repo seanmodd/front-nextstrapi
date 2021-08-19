@@ -1,28 +1,48 @@
 import Link from 'next/link';
 import { useContext } from 'react';
-import { HStack, Flex, VStack } from '@chakra-ui/react';
+import { HStack, Flex, VStack, Button } from '@chakra-ui/react';
 import styles from '@/styles/Header.module.css';
 import Search from './Search';
 import AuthContext from '@/context/AuthContext';
+import 'typeface-raleway';
+import '@fontsource/questrial';
+import '@fontsource/inter';
 
 export default function Header() {
   const { user, signout } = useContext(AuthContext);
   return (
     // <header className={styles.header}>
-    <Flex mb="50px" w="100vw" justifyContent="center" alignItems="center">
+    <Flex
+      mb="50px"
+      w="100vw"
+      justifyContent="center"
+      alignItems="center"
+      // bg="pink"
+    >
       <div className={styles.logo}>
-        <Flex w="400px">
+        <HStack minWidth="300px" align="center" justify="center">
           <Link href="/">
-            <a>Sport News</a>
+            <a
+              style={{
+                fontFamily: 'questrial',
+                fontWeight: '600',
+                textDecoration: 'underline',
+              }}
+            >
+              Sport News
+            </a>
           </Link>
-        </Flex>
+        </HStack>
       </div>
-      <Search />
+      <HStack minWidth="300px" justifyContent="center" alignItems="center">
+        <Search />
+      </HStack>
       <HStack
-        w="100%"
+        minWidth="300px"
         justifyContent="center"
         alignItems="center"
         spacing="50px"
+        // bg="blue"
       >
         <Link href="/news">
           <a>News</a>
@@ -42,7 +62,8 @@ export default function Header() {
         ) : (
           <>
             <Link href="/auth/signin">
-              <a className="btn-secondary">Sign In</a>
+              {/* <button>Sign In</button> */}
+              <Button>Sign In</Button>
             </Link>
           </>
         )}
