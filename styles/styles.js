@@ -1,7 +1,7 @@
 // 1. Import the extendTheme function
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme, useColorMode } from '@chakra-ui/react';
 import 'typeface-poppins';
-
+import { GlobalStyleProps, Styles, mode } from '@chakra-ui/theme-tools';
 // 2. Extend the theme to include custom colors, fonts, etc
 // const colors = {
 //   brand: {
@@ -11,13 +11,32 @@ import 'typeface-poppins';
 //   },
 // };
 
-const mytextborder = {
-  border: '-webkit-text-stroke: 10px black;',
-};
+// // setup light/dark mode global defaults
+// const mystyles: Styles = {
+//   global: (props) => ({
+//     body: {
+//       color: useColorMode('gray.800', 'whiteAlpha.900')(props),
+//       bg: useColorMode('white', 'gray.900')(props)
+//     }
+//   })
+// };
+
+// const mycomponents = {
+//   Link: {
+//     // setup light/dark mode component defaults
+//     baseStyle: (props: GlobalStyleProps) => ({
+//       color: mode('blue.400', 'blue.300')(props)
+//     })
+//   }
+// };
 
 export const theme = extendTheme({
   styles: {
-    global: {
+    global: (props) => ({
+      body: {
+        // bg: mode('white', 'black')(props),
+        color: useColorMode('red.300', 'blue.500'),
+      },
       // styles for the `body`
       h1: {
         // color: '#202020',
@@ -30,7 +49,8 @@ export const theme = extendTheme({
       // styles for the `h1`
       body: {
         // bg: 'gray.400',
-        color: '#202020',
+        // color: '#202020',
+        color: useColorMode('red.300', 'blue.500'),
       },
       // styles for the `a`
       a: {
@@ -63,7 +83,7 @@ export const theme = extendTheme({
         },
         transition: 'all 0.5s ease-in-out',
       },
-    },
+    }),
   },
   components: {
     Heading: {
@@ -106,6 +126,17 @@ export const theme = extendTheme({
           fontSize: 'lg',
           px: '14px',
         },
+      },
+      variants: {
+        'with-shadow': {
+          bg: 'red.400',
+          boxShadow: '0 0 2px 2px #efdfde',
+        },
+        // 4. We can override existing variants
+        solid: (props) => ({
+          bg: props.colorMode === 'dark' ? 'red.300' : 'red.500',
+          color: props.colorMode === 'dark' ? 'red.300' : 'blue.500',
+        }),
       },
     },
   },
