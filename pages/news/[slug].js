@@ -45,7 +45,6 @@ export default function SingleNews({ news }) {
           <div className={styles.image}>
             <Image
               src={
-                // news.image ? news.image.formats.medium.url : '/images/hero.jpg'
                 news.image ? news.image.url : '/images/hero.jpg'
               }
               width={900}

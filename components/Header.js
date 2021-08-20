@@ -39,7 +39,7 @@ export default function Header() {
             {colorMode === 'dark' ? (
               <Image cursor="pointer" py="0" src="/face.png" />
             ) : (
-              <Image cursor="pointer" py="0" src="/face-3.png" />
+              <Image cursor="pointer" py="0" src="/face-2.png" />
             )}
           </Link>
           <h1 style={{ fontFamily: 'questrial' }}>News.</h1>
